@@ -4,6 +4,7 @@ import { addNewFoodAndCategory } from "../utils/addNewFoodAndCategory";
 import { ask } from "../utils/ask";
 import { Food } from "../entities/Food";
 import { sleep } from "../../../shared/utils/sleep";
+import { giveUp } from "../utils/giveUp";
 
 export async function guessTheFood(foods: Foods) {
   const categories = foods.getFoods().map(food => food.getFoodCategory());
@@ -37,7 +38,13 @@ export async function guessTheFood(foods: Foods) {
     return;
   }
 
-  console.log("Não acertei, vou tentar de novo! \n");
+  if (getFoods.length === 1) {
+    await giveUp(foods, anwserCategoryName.category);
+
+    return;
+  }
+
+  console.log("Não acertei, mas vou tentar de novo! \n");
 
   const secondTry = await ask(
     "food",
@@ -53,17 +60,7 @@ export async function guessTheFood(foods: Foods) {
     return;
   }
 
-  console.log("Desisto :( \n");
-
-  const newFood = await inquirer.prompt({
-    type: "input",
-    name: "food",
-    message: "Qual prato você pensou? \n",
-  });
-
-  foods.addFood(new Food(newFood.food, anwserCategoryName.category));
-
-  console.log("Obrigado por me ensinar! \n");
+  await giveUp(foods, anwserCategoryName.category);
 
   return;
 }
