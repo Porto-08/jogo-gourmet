@@ -1,0 +1,21 @@
+{
+  "name": "jogogourmet",
+  "version": "1.0.0",
+  "description": "Um jogo de adivinhação de pratos",
+  "main": "app.js",
+  "scripts": {
+    "start": "tsc && node dist/shared/app.js"
+  },
+  "keywords": [],
+  "author": "Samuel Porto",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/inquirer": "^9.0.3",
+    "@types/node": "^18.11.18",
+    "typescript": "^4.9.4",
+    "vitest": "^0.26.3"
+  },
+  "dependencies": {
+    "inquirer": "8.0.0"
+  }
+}
