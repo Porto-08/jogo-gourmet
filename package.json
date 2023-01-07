@@ -4,7 +4,8 @@
   "description": "Um jogo de adivinhação de pratos",
   "main": "app.js",
   "scripts": {
-    "start": "tsc && node dist/shared/app.js"
+    "start": "tsc && node dist/shared/app.js",
+    "test": "vitest --watch"
   },
   "keywords": [],
   "author": "Samuel Porto",
@@ -16,6 +17,7 @@
     "vitest": "^0.26.3"
   },
   "dependencies": {
+    "commander": "^9.5.0",
     "inquirer": "8.0.0"
   }
 }
