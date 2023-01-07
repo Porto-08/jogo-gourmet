@@ -1,4 +1,3 @@
-import { expect, describe, it } from "vitest";
 import { Food } from "./Food";
 
 describe("Food", () => {
