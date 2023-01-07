@@ -1,8 +1,6 @@
-import inquirer from "inquirer";
 import { Foods } from "../entities/Foods";
 import { addNewFoodAndCategory } from "../utils/addNewFoodAndCategory";
 import { ask } from "../utils/ask";
-import { Food } from "../entities/Food";
 import { sleep } from "../../../shared/utils/sleep";
 import { giveUp } from "../utils/giveUp";
 
